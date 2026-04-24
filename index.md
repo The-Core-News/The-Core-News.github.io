@@ -5,9 +5,7 @@
 
 ## 최신 게시글
 
-- [RecursionError] Python 재귀 깊이 제한 설정과 해결 방법 완전 가이드](categories/[RecursionError]-Python-재귀-깊이-제한-설정과-해결-방법-완전-가이드.md)
 
 ---
 
 *The Core News 분석팀 - 기술 전문 에디터*
-- [Python RecursionError 완벽 해결 가이드](recursion-error.md)
