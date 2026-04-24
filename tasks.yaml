@@ -1,0 +1,38 @@
+tasks:
+  - name: "genius_news_operation"
+    description: "천재 에이전트 군단의 뉴스 선별 및 고품질 발행"
+    workflow:
+      # [1단계: 정보 수집 및 데이터 검증]
+      - agent: "Technical_Researcher"
+        prompt: |
+          SOUL.md의 [데이터 검증] 원칙을 준수하라.
+          반드시 'openclaw-web-search' 또는 'tavily' 검색 도구를 사용하여 2026년 현재 시점 기준의 최신 보안 뉴스 및 StackOverflow 이슈 3가지를 수집하라.
+          수집한 정보에는 반드시 실제 접근 가능한 URL 출처(뉴스 기사 또는 CVE 링크)를 기재해야 한다.
+          절대 기존 학습 데이터에 의존하여 임의로 과거 데이터를 지어내지 마라.
+        tools: ["openclaw-web-search", "tavily"] 
+    
+      # [2단계: 자율적 주제 선정]
+      - agent: "SEO_Chief_Editor"
+        prompt: |
+          리서처가 수집한 3가지 최신 기술 이슈(2026년 기준)를 SEO 수익성 관점에서 분석하라.
+          사용자에게 묻지 말고, 가장 트래픽 유입이 높을 것으로 판단되는 주제 1개를 '스스로' 선정하여 다음 단계(Lead_Writer)로 즉시 넘겨라.
+          선정 이유를 로그에 남기되, 멈추지 말고 작업을 계속 진행하라.
+
+      # [3단계: 고품질 콘텐츠 집필]
+      - agent: "Lead_Technical_Writer"
+        prompt: |
+          선정된 주제에 대해 SOUL.md의 [블로그 작성 규칙]을 완벽히 적용하여 포스팅을 작성하라.
+          - 반드시 코드 블록(```)을 포함할 것.
+          - AI 티가 나지 않는 기자/엔지니어 톤을 유지할 것.
+          - H2, H3 태그를 활용한 논리적 구조를 갖출 것.
+
+      # [4단계: 최종 품질 검사 및 발행]
+      - agent: "Quality_Controller"
+        prompt: |
+          작성된 포스팅에 문법 오류가 없는지, 코드에 결함이 없는지 검수하라.
+          검수가 완료되면 ~/The-Core-News.github.io/categories/ 하위의 적절한 폴더에 파일로 저장하고, 
+          아래 쉘 명령어를 실행하여 깃허브에 즉시 배포하라:
+          1. git add .
+          2. git commit -m "Technical Post: [주제명]"
+          3. git push
+        tools: ["shell_command"]

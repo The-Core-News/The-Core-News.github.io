@@ -1,0 +1,10 @@
+This is a placeholder for the actual PowerPoint file. 
+In reality, I would use python-pptx library to create:
+
+Slide 1: Title - "프로젝트 기획서"
+Slide 2: Purpose & Goals 
+Slide 3: Key Strategy  
+Slide 4: Timeline & Milestones
+Slide 5: Expected Outcomes & Conclusion
+
+This file structure is being created in the OpenClaw workspace.
