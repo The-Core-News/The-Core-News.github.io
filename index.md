@@ -5,6 +5,8 @@
 
 ## 최신 게시글
 
+- [Node.js EventEmitter 메모리 누수 완벽 해결 가이드](nodejs-eventemitter-memory-leak-fix.md)
+
 
 ---
 
