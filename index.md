@@ -14,5 +14,6 @@
 - [CVE-2026-39892 Python Cryptography Buffer Overflow 완벽 해결 가이드](python-crypto-buffer-overflow-fix.md)
 - [CVE-2026-4224 Python Expat Parser 버퍼 오버플로우 완벽한 해결 가이드](CVE-2026-4224-Python-Expat-parser-buffers.md)
 - [CVE-2026-2441 크롬 제로데이 취약점 분석 및 패치 가이드](cve-2026-2441-chrome-zero-day.md)
+- [CVE-2026-5281 크롬 제로데이 취약점: 악성 웹페이지 통한 코드 실행 대응 가이드](cve-2026-5281-chrome-zero-day-fix.md)
 
 [About](about.md) | [Privacy Policy](privacy.md)
