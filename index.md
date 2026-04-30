@@ -17,3 +17,4 @@
 - [CVE-2026-5281 크롬 제로데이 취약점: 악성 웹페이지 통한 코드 실행 대응 가이드](cve-2026-5281-chrome-zero-day-fix.md)
 
 [About](about.md) | [Privacy Policy](privacy.md)
+- [CVE-2026-27448 pyOpenSSL 인증 우회 취약점 완벽 해결 가이드](cve-2026-27448-pyopenssl-auth-bypass-fix.md)
