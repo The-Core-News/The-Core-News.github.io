@@ -9,6 +9,7 @@
 
 ## 🛡️ 보안 및 취약점 (Security & CVE)
 <!-- NEW_POST_SECURITY -->
+- [CVE-2026-26144 Microsoft Excel XSS 취약점 실제 공격](cve-2026-26144-microsoft-excel-xss.md)
 - [CVE-2026-34197 Apache ActiveMQ 원격 코드 실행 취약점](apache-activemq-rce-cve-2026-34197-fix.md)
 - [CVE-2026-27681 SAP HANA SQL Injection 취약점: 실제 공격 발생 중, 당장의 패치 요구](cve-2026-27681-sap-hana-sql-injection.md)
 - [CVE-2026-27448 pyOpenSSL 인증 우회 취약점 완벽 해결 가이드](cve-2026-27448-pyopenssl-auth-bypass-fix.md)
