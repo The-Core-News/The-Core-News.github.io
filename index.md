@@ -23,5 +23,6 @@
 
 ## 🌐 글로벌 IT 트렌드 및 개발 (IT Trends & Dev)
 <!-- NEW_POST_IT -->
+- [OpenClaw CVE-2026-25253 악성 링크 원클릭 RCE: 로컬 시스템 장악 긴급 대응 가이드](cve-2026-25253-openclaw-rce-fix.md)
 - [Node.js EventEmitter 메모리 누수 완벽 해결 가이드](nodejs-eventemitter-memory-leak-fix.md)
 - [Python RecursionError 완벽 해결 가이드](python-recursion-error.md)
