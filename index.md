@@ -20,6 +20,7 @@
 
 ## 🤖 최신 AI 기술 동향 (AI & LLM)
 <!-- NEW_POST_AI -->
+- [가트너 2026 년 10 대 전략 기술 트렌드: AI 슈퍼컴퓨팅 다중 에이전트 시스템 도메인 특화 LLM 이 이끈다](gartner-2026-ai-strategy-tech-trends.md)
 
 ## 🌐 글로벌 IT 트렌드 및 개발 (IT Trends & Dev)
 <!-- NEW_POST_IT -->
