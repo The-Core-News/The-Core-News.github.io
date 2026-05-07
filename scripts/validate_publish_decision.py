@@ -37,14 +37,27 @@ def latest_run_dir():
     if not runs.exists():
         return None
 
+    search_roots = []
+
+    auto_publish = runs / "auto-publish"
+    if auto_publish.exists():
+        search_roots.append(auto_publish)
+
+    # 기존 호환성: runs/<run_id>/ 구조도 허용하되 content-audit는 제외한다.
+    search_roots.append(runs)
+
     candidates = []
-    for p in runs.iterdir():
-        if not p.is_dir():
-            continue
-        if p.name == "content-audit":
-            continue
-        if (p / "06_publish_decision.json").exists():
-            candidates.append(p)
+
+    for root in search_roots:
+        for p in root.iterdir():
+            if not p.is_dir():
+                continue
+            if p.name == "content-audit":
+                continue
+            if p == auto_publish:
+                continue
+            if (p / "06_publish_decision.json").exists():
+                candidates.append(p)
 
     if not candidates:
         return None
