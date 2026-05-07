@@ -1,0 +1,73 @@
+name: Auto publish merge
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - labeled
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-publish-merge:
+    if: >
+      contains(github.event.pull_request.labels.*.name, 'auto-publish') &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out pull request branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Require auto-content branch
+        run: |
+          case "${{ github.event.pull_request.head.ref }}" in
+            auto-content/*)
+              echo "AUTO_CONTENT_BRANCH_OK"
+              ;;
+            *)
+              echo "Auto publish PR must come from auto-content/* branch."
+              exit 1
+              ;;
+          esac
+
+      - name: Block pipeline file changes
+        run: |
+          git fetch origin main
+          CHANGED="$(git diff --name-only origin/main...HEAD)"
+          echo "$CHANGED"
+
+          if echo "$CHANGED" | grep -E '^(\.github/workflows/|scripts/)'; then
+            echo "Auto publish PR must not change scripts or workflow files."
+            exit 1
+          fi
+
+      - name: Run content gate
+        run: python3 scripts/validate_content.py
+
+      - name: Run publish decision gate
+        run: python3 scripts/validate_publish_decision.py
+
+      - name: Squash merge pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh pr merge "${{ github.event.pull_request.number }}" \
+            --squash \
+            --delete-branch \
+            --subject "자동 게시: 검증 통과 콘텐츠 반영" \
+            --body "자동 검증 게이트를 통과한 콘텐츠 변경입니다."
