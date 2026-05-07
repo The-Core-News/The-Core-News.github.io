@@ -1,4 +1,9 @@
-runs/
+# Local OpenClaw / audit artifacts
+runs/*
+!runs/
+!runs/auto-publish/
+!runs/auto-publish/**
+
 openclaw_tasks.safe.yaml
 _quarantine/
 AGENT_RULES.md
