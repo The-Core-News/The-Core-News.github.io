@@ -30,3 +30,5 @@
 *The Core News 분석팀 - 기술 전문 에디터*
 
 [About](about.md) | [Privacy Policy](privacy.md)
+
+<!-- pages rebuild trigger -->
