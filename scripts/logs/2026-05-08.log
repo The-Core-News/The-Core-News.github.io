@@ -1,0 +1,37 @@
+﻿[18:37:01] ===== Pipeline Start =====
+[18:37:02] >> Agent 1: Collect
+[18:37:02] ===== ERROR: 이 시스템에서 스크립트를 실행할 수 없으므로 D:\The-Core-News.github.io\scripts\agent1_collect.ps1 파일을 로드할 수 없습니다. 자세한 내용은 about_Execution_Policies(https://go.microsoft.com/fwlink/?LinkID=135170)를 참조하십시오. =====
+[18:37:51] ===== Pipeline Start =====
+[18:37:51] >> Agent 1: Collect
+[18:39:19] >> Agent 2: Analyze
+[18:39:57] >> Agent 3: Write
+[18:39:57] ===== ERROR: 위치 D:\The-Core-News.github.io\scripts\agent3_write.ps1:59 문자:41
++ Write-Host "[Agent 3] ?꾨즺 - 珥덉븞 3媛???λ맖" -ForegroundColor Green
++                                         ~~~~~~~~~~~~~~~~~~~~~~~~
+문자열에 " 종결자가 없습니다. =====
+[18:41:31] ===== Pipeline Start =====
+[18:41:31] >> Agent 1: Collect
+[18:42:57] >> Agent 2: Analyze
+[18:44:14] >> Agent 3: Write
+[18:55:39] >> Agent 4: Review
+[18:55:45] ===== ERROR: 잘못된 JSON 기본 형식: . =====
+[18:56:56] ===== Pipeline Start =====
+[18:56:56] >> Agent 1: Collect
+[18:58:01] >> Agent 2: Analyze
+[18:59:00] >> Agent 3: Write
+[19:03:05] >> Agent 4: Review
+[19:03:31] >> Agent 5: Publish
+[22:59:14] ===== Pipeline Done =====
+[22:59:25] ===== Pipeline Start =====
+[22:59:25] >> Agent 1: Collect
+[23:00:11] >> Agent 2: Analyze
+[23:01:02] >> Agent 3: Write
+[23:07:21] >> Agent 4: Review
+[23:12:43] ===== ERROR: "2"개의 인수가 있는 "Match"을(를) 호출하는 동안 예외가 발생했습니다. "값은 null일 수 없습니다.
+매개 변수 이름: input" =====
+[23:29:42] ===== Pipeline Start =====
+[23:29:42] >> Agent 1: Collect
+[23:30:42] >> Agent 2: Analyze
+[23:31:25] >> Agent 3: Write
+[23:38:57] >> Agent 4: Review
+[23:40:50] >> Agent 5: Publish

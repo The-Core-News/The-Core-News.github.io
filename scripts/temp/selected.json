@@ -1,0 +1,9 @@
+﻿I need write permission to save the file. Please approve the write to `scripts/temp/selected.json`, and I'll persist the three selections so the next pipeline stage (`agent3_write`) can proceed.
+
+**Summary of picks:**
+
+| Category | Selected |
+|----------|----------|
+| **security** | CVE-2026-41512 ??RCE in ai-scanner (Playwright) |
+| **ai** | Natural Language Autoencoders (Anthropic research) |
+| **it** | Podman Rootless Containers and the Copy Fail Exploit |

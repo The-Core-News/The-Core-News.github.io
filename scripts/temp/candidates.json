@@ -1,0 +1,70 @@
+﻿```json
+{
+  "security": [
+    {
+      "title": "CVE-2026-41512: RCE via JavaScript Injection in ai-scanner (Playwright)",
+      "url": "https://cvefeed.io/vuln/detail/CVE-2026-41512",
+      "summary": "ai-scanner versions 1.0.0??.4.0 allow remote code execution through JavaScript injection in the BrowserAutomation::PlaywrightService component."
+    },
+    {
+      "title": "CVE-2026-32803: Dell PowerScale OneFS Insufficient Logging Flaw",
+      "url": "https://cvefeed.io/vuln/detail/CVE-2026-32803",
+      "summary": "Dell PowerScale OneFS contains an insufficient logging vulnerability that allows low-privileged local attackers to tamper with system information."
+    },
+    {
+      "title": "CVE-2026-41507: Arbitrary Command Execution in math-codegen",
+      "url": "https://cvefeed.io/vuln/detail/CVE-2026-41507",
+      "summary": "math-codegen prior to 0.4.3 allows arbitrary command execution when unsanitized user input reaches its parser."
+    },
+    {
+      "title": "CVE-2026-41509: Integer Underflow in CROSS Post-Quantum Signature Library",
+      "url": "https://cvefeed.io/vuln/detail/CVE-2026-41509",
+      "summary": "An integer underflow in the CROSS post-quantum signature algorithm's crypto_sign_open() function triggers a buffer overflow during signature verification."
+    },
+    {
+      "title": "CVE-2026-41506: go-git Leaks HTTP Auth Credentials on Redirect",
+      "url": "https://cvefeed.io/vuln/detail/CVE-2026-41506",
+      "summary": "go-git before versions 5.18.0 and 6.0.0-alpha.2 inadvertently leaks HTTP authentication credentials when following redirects during smart-HTTP clone operations."
+    }
+  ],
+  "ai": [
+    {
+      "title": "Natural Language Autoencoders: Turning Claude's Thoughts into Text",
+      "url": "https://www.anthropic.com/research/natural-language-autoencoders",
+      "summary": "Anthropic researchers explore converting Claude's internal representations into interpretable natural language to advance model interpretability."
+    },
+    {
+      "title": "Agents Need Control Flow, Not More Prompts",
+      "url": "https://bsuh.bearblog.dev/agents-need-control-flow/",
+      "summary": "A developer argues that reliable AI agents require explicit structured control flow rather than increasingly complex prompt engineering."
+    },
+    {
+      "title": "GPT-5.5 Price Increase Analysis",
+      "url": "https://openrouter.ai/announcements/gpt55-cost-analysis",
+      "summary": "OpenRouter breaks down the cost implications of GPT-5.5's updated pricing and what it means for developers building on top of the model."
+    }
+  ],
+  "it": [
+    {
+      "title": "ClojureScript Adds Async/Await Support",
+      "url": "https://clojurescript.org/news/2026-05-07-release",
+      "summary": "The latest ClojureScript release introduces native async/await syntax, bringing modern asynchronous programming patterns to the ClojureScript ecosystem."
+    },
+    {
+      "title": "QBE: A Lightweight Compiler Back End",
+      "url": "https://c9x.me/compile/",
+      "summary": "QBE is gaining attention as a simple, embeddable compiler backend that offers a practical alternative to LLVM for language implementers."
+    },
+    {
+      "title": "Blaise: A Modern Self-Hosting Object Pascal Compiler Targeting QBE",
+      "url": "https://github.com/graemeg/blaise",
+      "summary": "Blaise is a new zero-legacy Object Pascal compiler built to be self-hosting and targeting the QBE compiler backend for native code generation."
+    },
+    {
+      "title": "Podman Rootless Containers and the Copy Fail Exploit",
+      "url": "https://garrido.io/notes/podman-rootless-containers-copy-fail/",
+      "summary": "A researcher details a security issue in Podman's rootless container mode where a copy operation failure exposes an exploitable attack surface."
+    }
+  ]
+}
+```
