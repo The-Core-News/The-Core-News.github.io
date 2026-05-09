@@ -65,8 +65,8 @@ or
 
             if ($retryCount -le 1) {
                 $feedback = $reviewJson.feedback
-                $rewritePrompt = "Rewrite the blog post at path $tempTxt based on this feedback: $feedback. Output markdown only including front matter. Do not wrap in code blocks."
-                $rewritten = & "C:\Users\user\.local\bin\claude.exe" -p $rewritePrompt --allowedTools "Bash,WebFetch"
+                $rewritePrompt = "Read the blog post from the file at path $tempTxt using Bash. Rewrite it based on this feedback: $feedback. Output the complete rewritten markdown including front matter to stdout only. Do not write or save any files. Do not wrap in code blocks."
+                $rewritten = & "C:\Users\user\.local\bin\claude.exe" -p $rewritePrompt --allowedTools "Bash"
                 if ($rewritten) {
                     $rewritten | Out-File -FilePath $draft.FullName -Encoding UTF8
                 }
