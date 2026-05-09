@@ -2,68 +2,53 @@
 {
   "security": [
     {
-      "title": "CVE-2026-41512: RCE via JavaScript Injection in ai-scanner (Playwright)",
-      "url": "https://cvefeed.io/vuln/detail/CVE-2026-41512",
-      "summary": "ai-scanner versions 1.0.0??.4.0 allow remote code execution through JavaScript injection in the BrowserAutomation::PlaywrightService component."
+      "title": "CVE-2026-41311: LiquidJS Denial of Service via Circular Block Reference",
+      "url": "https://cvefeed.io/vuln/detail/CVE-2026-41311",
+      "summary": "A circular block reference in LiquidJS layout templates triggers infinite recursion, exhausting memory and crashing Node.js processes."
     },
     {
-      "title": "CVE-2026-32803: Dell PowerScale OneFS Insufficient Logging Flaw",
-      "url": "https://cvefeed.io/vuln/detail/CVE-2026-32803",
-      "summary": "Dell PowerScale OneFS contains an insufficient logging vulnerability that allows low-privileged local attackers to tamper with system information."
+      "title": "CVE-2026-42301: pyp2spec Code Injection via Unescaped PyPI Metadata",
+      "url": "https://cvefeed.io/vuln/detail/CVE-2026-42301",
+      "summary": "Unescaped PyPI metadata written into RPM spec files allows arbitrary command execution during package builds."
     },
     {
-      "title": "CVE-2026-41507: Arbitrary Command Execution in math-codegen",
-      "url": "https://cvefeed.io/vuln/detail/CVE-2026-41507",
-      "summary": "math-codegen prior to 0.4.3 allows arbitrary command execution when unsanitized user input reaches its parser."
-    },
-    {
-      "title": "CVE-2026-41509: Integer Underflow in CROSS Post-Quantum Signature Library",
-      "url": "https://cvefeed.io/vuln/detail/CVE-2026-41509",
-      "summary": "An integer underflow in the CROSS post-quantum signature algorithm's crypto_sign_open() function triggers a buffer overflow during signature verification."
-    },
-    {
-      "title": "CVE-2026-41506: go-git Leaks HTTP Auth Credentials on Redirect",
-      "url": "https://cvefeed.io/vuln/detail/CVE-2026-41506",
-      "summary": "go-git before versions 5.18.0 and 6.0.0-alpha.2 inadvertently leaks HTTP authentication credentials when following redirects during smart-HTTP clone operations."
+      "title": "CVE-2026-42296: Argo Workflows Authorization Bypass Enables Host Network Access",
+      "url": "https://cvefeed.io/vuln/detail/CVE-2026-42296",
+      "summary": "Attackers can bypass strict template referencing controls in Argo Workflows to gain host network access, escalate service accounts, and modify security contexts."
     }
   ],
   "ai": [
     {
-      "title": "Natural Language Autoencoders: Turning Claude's Thoughts into Text",
-      "url": "https://www.anthropic.com/research/natural-language-autoencoders",
-      "summary": "Anthropic researchers explore converting Claude's internal representations into interpretable natural language to advance model interpretability."
+      "title": "Teaching Claude Why: Anthropic Research on Reasoning Improvements",
+      "url": "https://www.anthropic.com/research/teaching-claude-why",
+      "summary": "Anthropic publishes research on training methods that improve Claude's ability to reason about and explain the underlying 'why' behind its outputs."
     },
     {
-      "title": "Agents Need Control Flow, Not More Prompts",
-      "url": "https://bsuh.bearblog.dev/agents-need-control-flow/",
-      "summary": "A developer argues that reliable AI agents require explicit structured control flow rather than increasingly complex prompt engineering."
+      "title": "A Recent Experience with ChatGPT 5.5 Pro",
+      "url": "https://gowers.wordpress.com/2026/05/08/a-recent-experience-with-chatgpt-5-5-pro/",
+      "summary": "A detailed personal account evaluating the capabilities and limitations of OpenAI's latest ChatGPT 5.5 Pro model in practice."
     },
     {
-      "title": "GPT-5.5 Price Increase Analysis",
-      "url": "https://openrouter.ai/announcements/gpt55-cost-analysis",
-      "summary": "OpenRouter breaks down the cost implications of GPT-5.5's updated pricing and what it means for developers building on top of the model."
+      "title": "Can LLMs Model Real-World Systems in TLA+?",
+      "url": "https://www.sigops.org/2026/can-llms-model-real-world-systems-in-tla/",
+      "summary": "Researchers investigate whether large language models can reliably generate correct formal specifications for distributed systems using the TLA+ language."
     }
   ],
   "it": [
     {
-      "title": "ClojureScript Adds Async/Await Support",
-      "url": "https://clojurescript.org/news/2026-05-07-release",
-      "summary": "The latest ClojureScript release introduces native async/await syntax, bringing modern asynchronous programming patterns to the ClojureScript ecosystem."
+      "title": "Mojo 1.0 Beta Released",
+      "url": "https://mojolang.org/",
+      "summary": "Mojo, the high-performance systems programming language designed for AI and low-level development, reaches its 1.0 Beta milestone."
     },
     {
-      "title": "QBE: A Lightweight Compiler Back End",
-      "url": "https://c9x.me/compile/",
-      "summary": "QBE is gaining attention as a simple, embeddable compiler backend that offers a practical alternative to LLVM for language implementers."
+      "title": "Serving a Website on a Raspberry Pi Zero Running Entirely in RAM",
+      "url": "https://btxx.org/posts/memory/",
+      "summary": "A developer details how to strip down a Linux environment to host a live website on a Raspberry Pi Zero with the entire OS and site loaded into RAM."
     },
     {
-      "title": "Blaise: A Modern Self-Hosting Object Pascal Compiler Targeting QBE",
-      "url": "https://github.com/graemeg/blaise",
-      "summary": "Blaise is a new zero-legacy Object Pascal compiler built to be self-hosting and targeting the QBE compiler backend for native code generation."
-    },
-    {
-      "title": "Podman Rootless Containers and the Copy Fail Exploit",
-      "url": "https://garrido.io/notes/podman-rootless-containers-copy-fail/",
-      "summary": "A researcher details a security issue in Podman's rootless container mode where a copy operation failure exposes an exploitable attack surface."
+      "title": "AWS US-East-1 Outage: Recovery Expected to Take Hours",
+      "url": "https://www.cnbc.com/2026/05/08/aws-outage-data-center-fanduel-coinbase.html",
+      "summary": "A power loss and overheating incident at an AWS North Virginia data center caused a major US-East-1 outage affecting services including FanDuel and Coinbase."
     }
   ]
 }

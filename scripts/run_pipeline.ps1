@@ -3,6 +3,12 @@ $LOG_PATH = "$SCRIPT_PATH\logs"
 $today = (Get-Date).ToString("yyyy-MM-dd")
 $logFile = "$LOG_PATH\$today.log"
 
+# 오늘 이미 실행했으면 스킵
+if (Test-Path $logFile) {
+    Write-Host "Already ran today. Skipping."
+    exit 0
+}
+
 New-Item -ItemType Directory -Force -Path $LOG_PATH | Out-Null
 
 function Log($msg) {
