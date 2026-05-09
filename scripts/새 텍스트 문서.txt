@@ -1,92 +1,65 @@
 PS D:\The-Core-News.github.io> powershell -ExecutionPolicy Bypass -File "D:\The-Core-News.github.io\scripts\run_pipeline.ps1"
-[23:29:42] ===== Pipeline Start =====
-[23:29:42] >> Agent 1: Collect
+[15:00:35] ===== Pipeline Start =====
+[15:00:35] >> Agent 1: Collect
 [Agent 1] Collecting news...
 [Agent 1] Done - candidates.json saved.
-[23:30:42] >> Agent 2: Analyze
+[15:01:25] >> Agent 2: Analyze
 [Agent 2] Analyzing and selecting...
 [Agent 2] Done - selected.json saved.
-[23:31:25] >> Agent 3: Write
+[15:01:31] >> Agent 3: Write
 [Agent 3] Writing posts...
-[Agent 3] Done: 2026-05-08-security.md
-[Agent 3] Done: 2026-05-08-ai.md
-[Agent 3] Done: 2026-05-08-it.md
+[Agent 3] Done: 2026-05-09-security.md
+[Agent 3] Done: 2026-05-09-ai.md
+[Agent 3] Done: 2026-05-09-it.md
 [Agent 3] All posts written.
-[23:38:57] >> Agent 4: Review
+[15:10:23] >> Agent 4: Review
 [Agent 4] Reviewing posts...
-[Agent 4] FAIL (1/2): 2026-05-08-ai.md
-[Agent 4] JSON parse failed, auto-approving: 2026-05-08-ai.md
-[Agent 4] JSON parse failed, auto-approving: 2026-05-08-it.md
-[Agent 4] JSON parse failed, auto-approving: 2026-05-08-security.md
+[Agent 4] FAIL (1/2): 2026-05-09-ai.md
+[Agent 4] FAIL (2/2): 2026-05-09-ai.md
+[Agent 4] JSON parse failed, auto-approving: 2026-05-09-ai.md
+[Agent 4] JSON parse failed, auto-approving: 2026-05-09-it.md
+[Agent 4] JSON parse failed, auto-approving: 2026-05-09-security.md
 [Agent 4] Done - 3 approved.
-[23:40:50] >> Agent 5: Publish
+[15:35:35] >> Agent 5: Publish
 [Agent 5] Publishing...
-[Agent 5] Copied: 2026-05-08-ai.md
-[Agent 5] Copied: 2026-05-08-it.md
-[Agent 5] Copied: 2026-05-08-security.md
-warning: in the working copy of 'scripts/agent4_review.ps1', LF will be replaced by CRLF the next time Git touches it
+[Agent 5] Copied: 2026-05-09-ai.md
+[Agent 5] Copied: 2026-05-09-it.md
+[Agent 5] Copied: 2026-05-09-security.md
 warning: in the working copy of 'scripts/agent5_publish.ps1', LF will be replaced by CRLF the next time Git touches it
-warning: in the working copy of 'scripts/logs/2026-05-08.log', LF will be replaced by CRLF the next time Git touches it
-[main 8fd1a16] Auto post: 2026-05-08 (3 posts)
- 23 files changed, 811 insertions(+)
- create mode 100644 2026-05-08-ai-2.md
- create mode 100644 2026-05-08-ai.md
- create mode 100644 2026-05-08-it-2.md
- create mode 100644 2026-05-08-it.md
- create mode 100644 2026-05-08-security-2.md
- create mode 100644 2026-05-08-security.md
- create mode 100644 scripts/agent1_collect.ps1
- create mode 100644 scripts/agent2_analyze.ps1
- create mode 100644 scripts/agent3_write.ps1
- create mode 100644 scripts/agent4_review.ps1
- create mode 100644 scripts/agent5_publish.ps1
- create mode 100644 scripts/logs/2026-05-08.log
- create mode 100644 scripts/run_pipeline.ps1
- create mode 100644 scripts/setup_task.ps1
- create mode 100644 scripts/temp/approved/2026-05-08-ai.md
- create mode 100644 scripts/temp/approved/2026-05-08-it.md
- create mode 100644 scripts/temp/approved/2026-05-08-security.md
- create mode 100644 scripts/temp/candidates.json
- create mode 100644 scripts/temp/drafts/2026-05-08-ai.md
- create mode 100644 scripts/temp/drafts/2026-05-08-it.md
- create mode 100644 scripts/temp/drafts/2026-05-08-security.md
- create mode 100644 scripts/temp/review_input.txt
- create mode 100644 scripts/temp/selected.json
-Enumerating objects: 24, done.
-Counting objects: 100% (24/24), done.
+warning: in the working copy of 'scripts/run_pipeline.ps1', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/game_monitor.ps1', LF will be replaced by CRLF the next time Git touches it
+[main f7dda6f] Auto post: 2026-05-09 (3 posts)
+ 24 files changed, 431 insertions(+), 222 deletions(-)
+ create mode 100644 2026-05-09-ai.md
+ create mode 100644 2026-05-09-it.md
+ create mode 100644 2026-05-09-security.md
+ create mode 100644 scripts/game_monitor.ps1
+ delete mode 100644 scripts/logs/2026-05-08.log
+ create mode 100644 scripts/logs/2026-05-09.log
+ delete mode 100644 scripts/temp/approved/2026-05-08-ai.md
+ delete mode 100644 scripts/temp/approved/2026-05-08-it.md
+ delete mode 100644 scripts/temp/approved/2026-05-08-security.md
+ create mode 100644 scripts/temp/approved/2026-05-09-ai.md
+ create mode 100644 scripts/temp/approved/2026-05-09-it.md
+ create mode 100644 scripts/temp/approved/2026-05-09-security.md
+ delete mode 100644 scripts/temp/drafts/2026-05-08-ai.md
+ delete mode 100644 scripts/temp/drafts/2026-05-08-it.md
+ delete mode 100644 scripts/temp/drafts/2026-05-08-security.md
+ create mode 100644 scripts/temp/drafts/2026-05-09-ai.md
+ create mode 100644 scripts/temp/drafts/2026-05-09-it.md
+ create mode 100644 scripts/temp/drafts/2026-05-09-security.md
+ create mode 100644 "scripts/\354\203\210 \355\205\215\354\212\244\355\212\270 \353\254\270\354\204\234.txt"
+Enumerating objects: 25, done.
+Counting objects: 100% (25/25), done.
 Delta compression using up to 8 threads
-Compressing objects: 100% (21/21), done.
-Writing objects: 100% (22/22), 16.38 KiB | 4.09 MiB/s, done.
-Total 22 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
-remote: Resolving deltas: 100% (1/1), completed with 1 local object.
-remote: error: GH013: Repository rule violations found for refs/heads/main.
-remote:
-remote: - GITHUB PUSH PROTECTION
-remote:   —————————————————————————————————————————
-remote:     Resolve the following violations before pushing again
-remote:
-remote:     - Push cannot contain secrets
-remote:
-remote:
-remote:      (?) Learn how to resolve a blocked push
-remote:      https://docs.github.com/code-security/secret-scanning/working-with-secret-scanning-and-push-protection/working-with-push-protection-from-the-command-line#resolving-a-blocked-push
-remote:
-remote:
-remote:       —— Slack Incoming Webhook URL ————————————————————————
-remote:        locations:
-remote:          - commit: 8fd1a162f7d7014a8cfafa3d85f083351cab0531
-remote:            path: scripts/agent5_publish.ps1:5
-remote:
-remote:        (?) To push, remove secret from commit(s) or follow this URL to allow the secret.
-remote:        https://github.com/The-Core-News/The-Core-News.github.io/security/secret-scanning/unblock-secret/3DRiPB0atw3oI0UYLnDFlAxQC5R
-remote:
-remote:
-remote:
+Compressing objects: 100% (15/15), done.
+Writing objects: 100% (16/16), 9.14 KiB | 3.05 MiB/s, done.
+Total 16 (delta 4), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
 To https://github.com/The-Core-News/The-Core-News.github.io.git
- ! [remote rejected] main -> main (push declined due to repository rule violations)
-error: failed to push some refs to 'https://github.com/The-Core-News/The-Core-News.github.io.git'
-[Agent 5] Push failed.
+   8fd1a16..f7dda6f  main -> main
+[Agent 5] Push complete!
 ok
 [Agent 5] Temp files cleaned.
-[23:40:56] ===== Pipeline Done =====
-PS D:\The-Core-News.github.io>
+[15:35:39] ===== Pipeline Done =====
+PS D:\The-Core-News.github.io> 
