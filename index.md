@@ -1,4 +1,4 @@
-# The Core News: Global Insight & Data
+﻿# The Core News: Global Insight & Data
 
 가장 빠르고 정확한 글로벌 테크 및 개발 소식을 전달합니다.
 검증 가능한 출처와 실무 관점에 기반해 보안, AI, 개발 트렌드를 정리합니다.
@@ -6,6 +6,7 @@
 ## 보안 및 취약점
 
 <!-- NEW_POST_SECURITY -->
+- [CVE-2026-1749: HikCentral, 인증 없이 관리자 권한 탈취 — 지금 당장 확인해야 할 체크리스트](/2026-05-09-security/)
 - [CVE-2026-4224 Python Expat 파서 스택 오버플로우 취약점 대응 가이드](CVE-2026-4224-Python-Expat-parser-buffers.md)
 - [Apache ActiveMQ CVE-2026-34197 취약점 대응 가이드](apache-activemq-rce-cve-2026-34197-fix.md)
 - [CVE-2026-2441 크롬 브라우저 CSS 렌더링 엔진 Use-after-free 취약점 대응 가이드](cve-2026-2441-chrome-zero-day.md)
