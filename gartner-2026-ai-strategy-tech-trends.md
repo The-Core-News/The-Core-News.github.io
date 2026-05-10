@@ -113,5 +113,6 @@ trainer.train()
 가트너 10 대 트렌드에서 알 수 있듯이 2026 년의 성패는 **AI 인프라 구축**, **에이전트 협업 체계**, **도메인 특화 모델 적용** 세 가지에서 갈린다. 기업은 단순 자동화를 넘어 AI 가 주도하는 자율 생태계로 전환하는 것이 생존 요건이다.
 
 ---
-**출처**: Gartner "Top 10 Strategic Technology Trends for 2026", ZDNet Korea, Lexology  
-**편집자**: The Core News 분석팀 (2026.05.05)
+
+*The Core News 분석팀 - 기술 전문 에디터*  
+작성일: 2026-05-05

@@ -61,6 +61,5 @@ print(f"Secure hash: {hashed.hex()}")  # 안정적으로 실행됨
 
 ---
 
-**본 포스팅은 실제 StackOverflow 와 보안 RSS 기반 2026 년 최신 데이터에 기반하여 작성되었습니다. 모든 코드 스니펫은 검수 후 발행되었습니다.**
-
-*The Core News 분석팀 - 기술 전문 에디터*
+*The Core News 분석팀 - 기술 전문 에디터*  
+작성일: 2026-04-24

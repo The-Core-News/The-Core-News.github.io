@@ -104,4 +104,7 @@ RecursionError 는 재귀 함수의 기본 구조를 다시 검토해야 하는 
 - [Python 공식 문서 - RecursionError](https://docs.python.org/3/library/exceptions.html#RecursionError)
 - [StackOverflow: How to fix RecursionError in Python](https://stackoverflow.com/questions/tagged/recursionerror)
 
-2026 년 파이썬 개발자를 위한 이 가이드가 재귀 함수 작성에 도움이 되길 바랍니다.
+---
+
+*The Core News 분석팀 - 기술 전문 에디터*  
+작성일: 2026-04-27
