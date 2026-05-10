@@ -1,4 +1,4 @@
-$BLOG_PATH = "D:\The-Core-News.github.io"
+﻿$BLOG_PATH = "D:\The-Core-News.github.io"
 $TEMP_PATH = "$BLOG_PATH\scripts\temp"
 $DRAFTS_PATH = "$TEMP_PATH\drafts"
 $today = (Get-Date).ToString("yyyy-MM-dd")
@@ -68,7 +68,7 @@ REQUIRED STRUCTURE (adapt section names to fit the topic naturally):
 
 ---
 
-*The Core News 분석팀 - 기술 전문 에디터*
+*The Core News 분석팀 - 기술 전문 에디터*  
 작성일: $today
 
 OUTPUT: markdown only, starting with # title. No front matter. No code fences around the whole output. No preamble.
