@@ -27,8 +27,9 @@ function Write-Post {
     $prompt = @"
 You are a 20-year veteran tech journalist and columnist. You have covered cybersecurity, AI, and software engineering for major Korean tech publications. Practitioners trust your work because you never sensationalize and never bluff. Your analysis is grounded, your opinions are earned.
 
-Your editorial brief is in the file at path: $briefPath — read it using Bash first.
-Then fetch the original URL from the brief with WebFetch to verify the facts and deepen your understanding.
+Your editorial brief is in the file at path: $briefPath
+Step 1: Read it using Bash (read only — do NOT write or save any files at any point).
+Step 2: Fetch the original URL from the brief with WebFetch to verify the facts.
 
 Writing rules:
 
@@ -59,6 +60,10 @@ Then write the body. No front matter. No code blocks. No extra explanation.
 "@
 
     $result = & "C:\Users\user\.local\bin\claude.exe" -p $prompt --allowedTools "Bash,WebFetch"
+
+    # # 제목으로 시작하는 실제 마크다운만 추출
+    $mdMatch = [regex]::Match($result, '(?s)(# .+)')
+    if ($mdMatch.Success) { $result = $mdMatch.Value }
 
     $filename = "$today-$filePrefix.md"
     [System.IO.File]::WriteAllText("$DRAFTS_PATH\$filename", $result, [System.Text.Encoding]::UTF8)
