@@ -1,4 +1,4 @@
-# The Core News: Global Insight & Data
+﻿# The Core News: Global Insight & Data
 
 가장 빠르고 정확한 글로벌 테크 및 개발 소식을 전달합니다.
 검증 가능한 출처와 실무 관점에 기반해 보안, AI, 개발 트렌드를 정리합니다.
@@ -6,6 +6,7 @@
 ## 보안 및 취약점
 
 <!-- NEW_POST_SECURITY -->
+- [ArchiveBox /add/ 엔드포인트, 비인증 원격 코드 실행 — 패치 없는 공백기 완화 가이드 (CVE-2026-42601)](2026-05-10-security.md)
 - [CVE-2026-4224 Python Expat 파서 스택 오버플로우 취약점 대응 가이드](CVE-2026-4224-Python-Expat-parser-buffers.md)
 - [Apache ActiveMQ CVE-2026-34197 취약점 대응 가이드](apache-activemq-rce-cve-2026-34197-fix.md)
 - [CVE-2026-2441 크롬 브라우저 CSS 렌더링 엔진 Use-after-free 취약점 대응 가이드](cve-2026-2441-chrome-zero-day.md)
@@ -17,6 +18,7 @@
 ## 최신 AI 기술 동향
 
 <!-- NEW_POST_AI -->
+- [Gemini API File Search, 멀티모달 RAG로 확장 — Langchain 파이프라인 마이그레이션 검토 시점인가](2026-05-10-ai.md)
 - [가트너 2026 년 전략 기술 트렌드: AI 슈퍼컴퓨팅·다중 에이전트 시스템 발표](gartner-2026-ai-strategy-tech-trends.md)
 
 ## 글로벌 IT 트렌드 및 개발
