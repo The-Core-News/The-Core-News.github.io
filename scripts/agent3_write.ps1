@@ -2,7 +2,6 @@ $BLOG_PATH = "D:\The-Core-News.github.io"
 $TEMP_PATH = "$BLOG_PATH\scripts\temp"
 $DRAFTS_PATH = "$TEMP_PATH\drafts"
 $today = (Get-Date).ToString("yyyy-MM-dd")
-$todayFull = (Get-Date).ToString("yyyy-MM-dd HH:mm:ss zzz")
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $OutputEncoding = [System.Text.Encoding]::UTF8
 New-Item -ItemType Directory -Force -Path $DRAFTS_PATH | Out-Null
@@ -22,15 +21,14 @@ Write-Host "[Agent 3] Writing posts..." -ForegroundColor Cyan
 function Write-Post {
     param($category, $categoryKR, $filePrefix, $tag)
 
-    $item = $selectedObj.$category | ConvertTo-Json -Depth 5
+    $briefPath = "$TEMP_PATH\brief_$category.json"
+    $selectedObj.$category | ConvertTo-Json -Depth 5 | Out-File -FilePath $briefPath -Encoding UTF8
 
     $prompt = @"
 You are a 20-year veteran tech journalist and columnist. You have covered cybersecurity, AI, and software engineering for major Korean tech publications. Practitioners trust your work because you never sensationalize and never bluff. Your analysis is grounded, your opinions are earned.
 
-Your editorial brief (JSON):
-$item
-
-First, fetch the original URL with WebFetch to verify the facts and deepen your understanding.
+Your editorial brief is in the file at path: $briefPath — read it using Bash first.
+Then fetch the original URL from the brief with WebFetch to verify the facts and deepen your understanding.
 
 Writing rules:
 
@@ -60,7 +58,7 @@ Output the markdown file content only. Start directly with the title as a level-
 Then write the body. No front matter. No code blocks. No extra explanation.
 "@
 
-    $result = & "C:\Users\user\.local\bin\claude.exe" -p $prompt --allowedTools "WebFetch"
+    $result = & "C:\Users\user\.local\bin\claude.exe" -p $prompt --allowedTools "Bash,WebFetch"
 
     $filename = "$today-$filePrefix.md"
     [System.IO.File]::WriteAllText("$DRAFTS_PATH\$filename", $result, [System.Text.Encoding]::UTF8)
