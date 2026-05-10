@@ -6,7 +6,7 @@
 ## 보안 및 취약점
 
 <!-- NEW_POST_SECURITY -->
-- [ArchiveBox /add/ 엔드포인트, 비인증 원격 코드 실행 — 패치 없는 공백기 완화 가이드 (CVE-2026-42601)](2026-05-10-security.md)
+- [CVE-2026-42601 ArchiveBox 비인증 원격 코드 실행 취약점 대응 가이드](2026-05-10-security.md)
 - [CVE-2026-4224 Python Expat 파서 스택 오버플로우 취약점 대응 가이드](CVE-2026-4224-Python-Expat-parser-buffers.md)
 - [Apache ActiveMQ CVE-2026-34197 취약점 대응 가이드](apache-activemq-rce-cve-2026-34197-fix.md)
 - [CVE-2026-2441 크롬 브라우저 CSS 렌더링 엔진 Use-after-free 취약점 대응 가이드](cve-2026-2441-chrome-zero-day.md)
@@ -18,7 +18,7 @@
 ## 최신 AI 기술 동향
 
 <!-- NEW_POST_AI -->
-- [Gemini API File Search, 멀티모달 RAG로 확장 — Langchain 파이프라인 마이그레이션 검토 시점인가](2026-05-10-ai.md)
+- [Gemini API File Search 멀티모달 RAG 지원 확장 발표](2026-05-10-ai.md)
 - [가트너 2026 년 전략 기술 트렌드: AI 슈퍼컴퓨팅·다중 에이전트 시스템 발표](gartner-2026-ai-strategy-tech-trends.md)
 
 ## 글로벌 IT 트렌드 및 개발
@@ -28,8 +28,6 @@
 - [Python RecursionError 재귀 깊이 제한 오류 해결 가이드](python-recursion-error.md)
 
 ---
-
-*The Core News 분석팀 - 기술 전문 에디터*
 
 [About](about.md) | [Privacy Policy](privacy.md)
 
