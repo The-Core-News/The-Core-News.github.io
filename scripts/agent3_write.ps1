@@ -39,8 +39,17 @@ WRITING STYLE — follow this exactly, matching the tone of the existing blog:
 - Formal Korean with sentence endings: ~합니다, ~있습니다, ~합니다 (not ~다 narrative style)
 - Each section must be useful on its own
 
+TITLE FORMAT — match existing blog titles exactly:
+- Security/CVE: "CVE-XXXX 제품명 취약점유형 대응 가이드"
+  Example: "CVE-2026-2441 크롬 브라우저 CSS 렌더링 엔진 Use-after-free 취약점 대응 가이드"
+- IT: "기술명 문제유형 해결 가이드"
+  Example: "Node.js EventEmitter 메모리 누수 해결 가이드"
+- AI: "서비스명 핵심내용 발표" or "주제: 부제"
+  Example: "가트너 2026년 전략 기술 트렌드: AI 슈퍼컴퓨팅 발표"
+No dramatic dashes (—), no editorial commentary, no parenthetical notes in the title.
+
 REQUIRED STRUCTURE (adapt section names to fit the topic naturally):
-# [명확한 한국어 제목] (예: "CVE-XXXX 제품명 취약점 대응 가이드" / "기술명 활용 가이드")
+# [위 형식에 맞는 한국어 제목]
 
 ## 개요
 (2-3 sentences: what happened, why it matters)
@@ -64,7 +73,7 @@ REQUIRED STRUCTURE (adapt section names to fit the topic naturally):
 OUTPUT: markdown only, starting with # title. No front matter. No code fences around the whole output. No preamble.
 "@
 
-    $rawResult = & "C:\Users\user\.local\bin\claude.exe" -p $prompt --allowedTools "Bash,WebFetch"
+    $rawResult = & "C:\Users\user\.local\bin\claude.exe" -p $prompt --allowedTools "Bash,WebFetch" --dangerouslySkipPermissions
 
     # 배열을 개행으로 조인하고 # 제목부터 추출
     $result = ($rawResult -join "`n")
