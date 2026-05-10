@@ -67,8 +67,8 @@ REQUIRED STRUCTURE (adapt section names to fit the topic naturally):
 (best practices, monitoring tips)
 
 ---
-**출처**: [출처명](url)
-**편집자**: The Core News 분석팀 ($today)
+출처: [출처명](url)
+편집자: The Core News 분석팀 ($today)
 
 OUTPUT: markdown only, starting with # title. No front matter. No code fences around the whole output. No preamble.
 "@
