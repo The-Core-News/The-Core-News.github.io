@@ -54,17 +54,10 @@ Writing rules:
 - Include actionable recommendations: what should readers do right now?
 - Minimum 1200 characters. Natural, authoritative Korean.
 
-Output the markdown file content only. Start with this exact front matter:
----
-layout: post
-title: "title here in Korean"
-date: $todayFull
-categories: [$categoryKR]
-tags: [$tag]
-excerpt: "one line summary in Korean"
----
+Output the markdown file content only. Start directly with the title as a level-1 heading:
+# 제목을 여기에 (Korean title)
 
-No code blocks. No extra explanation outside the markdown.
+Then write the body. No front matter. No code blocks. No extra explanation.
 "@
 
     $result = & "C:\Users\user\.local\bin\claude.exe" -p $prompt --allowedTools "WebFetch"
