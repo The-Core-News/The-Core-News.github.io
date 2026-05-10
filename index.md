@@ -8,7 +8,7 @@
 <!-- NEW_POST_SECURITY -->
 - [CVE-2026-42601 ArchiveBox 비인증 원격 코드 실행 취약점 대응 가이드](2026-05-10-security.md)
 - [CVE-2026-4224 Python Expat 파서 스택 오버플로우 취약점 대응 가이드](CVE-2026-4224-Python-Expat-parser-buffers.md)
-- [Apache ActiveMQ CVE-2026-34197 취약점 대응 가이드](apache-activemq-rce-cve-2026-34197-fix.md)
+- [CVE-2026-34197 Apache ActiveMQ 원격 코드 실행 취약점 대응 가이드](apache-activemq-rce-cve-2026-34197-fix.md)
 - [CVE-2026-2441 크롬 브라우저 CSS 렌더링 엔진 Use-after-free 취약점 대응 가이드](cve-2026-2441-chrome-zero-day.md)
 - [CVE-2026-26144 Microsoft Excel XSS 취약점 대응 가이드](cve-2026-26144-microsoft-excel-xss.md)
 - [CVE-2026-27681 SAP HANA SQL 입력 주입 취약점 대응 가이드](cve-2026-27681-sap-hana-sql-injection.md)
