@@ -12,8 +12,8 @@ foreach ($draft in $drafts) {
     $content = Get-Content $draft.FullName -Raw -Encoding UTF8
     $issues = @()
 
-    if ($content -notmatch '(?s)^---.*?layout:.*?title:.*?date:.*?categories:.*?tags:.*?excerpt:.*?---') {
-        $issues += "front matter incomplete"
+    if ($content -notmatch '^# ') {
+        $issues += "title heading missing"
     }
 
     if ($content.Length -lt 1200) {

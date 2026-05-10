@@ -19,49 +19,55 @@ $selectedObj = $jsonMatch.Value | ConvertFrom-Json
 Write-Host "[Agent 3] Writing posts..." -ForegroundColor Cyan
 
 function Write-Post {
-    param($category, $categoryKR, $filePrefix, $tag)
+    param($category, $filePrefix)
 
     $briefPath = "$TEMP_PATH\brief_$category.json"
     $selectedObj.$category | ConvertTo-Json -Depth 5 | Out-File -FilePath $briefPath -Encoding UTF8
 
     $prompt = @"
-You are a 20-year veteran tech journalist and columnist. You have covered cybersecurity, AI, and software engineering for major Korean tech publications. Practitioners trust your work because you never sensationalize and never bluff. Your analysis is grounded, your opinions are earned.
+You are a senior technical editor at The Core News, a Korean IT publication. Your job is to write structured technical guides for Korean IT practitioners.
 
 Your editorial brief is in the file at path: $briefPath
-Step 1: Read it using Bash (read only — do NOT write or save any files at any point).
-Step 2: Fetch the original URL from the brief with WebFetch to verify the facts.
+Step 1: Read it using Bash (read only, do NOT write any files).
+Step 2: Fetch the original URL from the brief with WebFetch to gather accurate technical details.
 
-Writing rules:
+WRITING STYLE — follow this exactly, matching the tone of the existing blog:
+- Informative and neutral. Not a newspaper column. Not opinionated narration.
+- Structured sections with ## headings and ### subheadings
+- Bullet points and numbered lists for technical content
+- Code blocks (bash, python, etc.) where directly applicable
+- Formal Korean with sentence endings: ~합니다, ~있습니다, ~합니다 (not ~다 narrative style)
+- Each section must be useful on its own
 
-[FACTS]
-- Write only what you can verify from the source or from widely corroborated reports.
-- State facts directly and confidently. Cite the source inline when making specific claims.
-- Do not pad with vague generalities. Every sentence must earn its place.
+REQUIRED STRUCTURE (adapt section names to fit the topic naturally):
+# [명확한 한국어 제목] (예: "CVE-XXXX 제품명 취약점 대응 가이드" / "기술명 활용 가이드")
 
-[SPECULATION / PREDICTION]
-- Anything not yet confirmed must be clearly signaled with explicit Korean hedging phrases.
-- Use phrases meaning: "expected to", "may be possible", "experts are concerned that", "not yet officially confirmed".
-- Never present a projection or inference as an established fact.
-- Your expert opinion is welcome but must be labeled as personal analysis, not established fact.
-- Example label: phrases like "in this journalist's view after tracking similar cases for 20 years".
+## 개요
+(2-3 sentences: what happened, why it matters)
 
-[STYLE]
-- This is not a translation. Write as an analyst who has seen this pattern before.
-- Use the editorial_angle from the brief as your framing lens.
-- Cover the key_points from the brief. Distinguish confirmed_facts from speculation_flags explicitly in the text.
-- Add the korean_context: make it concrete and relevant to what Korean teams face today.
-- Include actionable recommendations: what should readers do right now?
-- Minimum 1200 characters. Natural, authoritative Korean.
+## 상세 분석
+(technical breakdown with subsections and bullet points)
 
-Output the markdown file content only. Start directly with the title as a level-1 heading:
-# 제목을 여기에 (Korean title)
+## 영향 범위
+(who is affected, which versions/systems)
 
-Then write the body. No front matter. No code blocks. No extra explanation.
+## 대응 방법
+(step-by-step with numbered lists, code blocks if applicable)
+
+## 추가 권고 사항
+(best practices, monitoring tips)
+
+---
+**출처**: [source name](url)
+*The Core News 분석팀 - 기술 전문 에디터*
+
+OUTPUT: markdown only, starting with # title. No front matter. No code fences around the whole output. No preamble.
 "@
 
-    $result = & "C:\Users\user\.local\bin\claude.exe" -p $prompt --allowedTools "Bash,WebFetch"
+    $rawResult = & "C:\Users\user\.local\bin\claude.exe" -p $prompt --allowedTools "Bash,WebFetch"
 
-    # # 제목으로 시작하는 실제 마크다운만 추출
+    # 배열을 개행으로 조인하고 # 제목부터 추출
+    $result = ($rawResult -join "`n")
     $mdMatch = [regex]::Match($result, '(?s)(# .+)')
     if ($mdMatch.Success) { $result = $mdMatch.Value }
 
@@ -70,8 +76,8 @@ Then write the body. No front matter. No code blocks. No extra explanation.
     Write-Host "[Agent 3] Done: $filename" -ForegroundColor Green
 }
 
-Write-Post -category "security" -categoryKR "security" -filePrefix "security" -tag "security"
-Write-Post -category "ai"       -categoryKR "ai"       -filePrefix "ai"       -tag "ai"
-Write-Post -category "it"       -categoryKR "it"       -filePrefix "it"       -tag "it"
+Write-Post -category "security" -filePrefix "security"
+Write-Post -category "ai"       -filePrefix "ai"
+Write-Post -category "it"       -filePrefix "it"
 
 Write-Host "[Agent 3] All posts written." -ForegroundColor Green
