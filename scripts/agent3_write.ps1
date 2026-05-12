@@ -21,17 +21,12 @@ Write-Host "[Agent 3] Writing posts..." -ForegroundColor Cyan
 function Write-Post {
     param($category, $filePrefix)
 
-    $briefJson = $selectedObj.$category | ConvertTo-Json -Depth 5 -Compress
-    $briefUrl  = $selectedObj.$category.url
+    $briefJson = $selectedObj.$category | ConvertTo-Json -Depth 5
 
-    $prompt = @"
-You are a senior technical editor at The Core News, a Korean IT publication. Your job is to write structured technical guides for Korean IT practitioners.
-
-Your editorial brief (JSON):
-$briefJson
-
-Step 1: Fetch the URL above with WebFetch to gather accurate technical details.
-
+    $promptPart1 = 'You are a senior technical editor at The Core News, a Korean IT publication. Your job is to write structured technical guides for Korean IT practitioners.'
+    $promptPart2 = 'Your editorial brief (JSON):'
+    $promptPart3 = 'Fetch the URL in the brief with WebFetch to gather accurate technical details, then write the full article.'
+    $promptPart4 = @'
 WRITING STYLE — follow this exactly, matching the tone of the existing blog:
 - Informative and neutral. Not a newspaper column. Not opinionated narration.
 - Structured sections with ## headings and ### subheadings
@@ -68,12 +63,11 @@ REQUIRED STRUCTURE (adapt section names to fit the topic naturally):
 (best practices, monitoring tips)
 
 ---
+'@
+    $promptPart5 = "*The Core News 분석팀 - 기술 전문 에디터*  `n작성일: $today"
+    $promptPart6 = 'OUTPUT: markdown only, starting with # title. No front matter. No code fences around the whole output. No preamble.'
 
-*The Core News 분석팀 - 기술 전문 에디터*  
-작성일: $today
-
-OUTPUT: markdown only, starting with # title. No front matter. No code fences around the whole output. No preamble.
-"@
+    $prompt = $promptPart1 + "`n`n" + $promptPart2 + "`n" + $briefJson + "`n`n" + $promptPart3 + "`n`n" + $promptPart4 + "`n" + $promptPart5 + "`n`n" + $promptPart6
 
     $rawResult = & "C:\Users\user\.local\bin\claude.exe" -p $prompt --allowedTools "WebFetch"
 
