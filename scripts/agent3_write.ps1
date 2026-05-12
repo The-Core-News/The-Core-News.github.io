@@ -74,7 +74,7 @@ REQUIRED STRUCTURE (adapt section names to fit the topic naturally):
 OUTPUT: markdown only, starting with # title. No front matter. No code fences around the whole output. No preamble.
 "@
 
-    $rawResult = & "C:\Users\user\.local\bin\claude.exe" -p $prompt --allowedTools "Bash,WebFetch" --dangerouslySkipPermissions
+    $rawResult = & "C:\Users\user\.local\bin\claude.exe" -p $prompt --allowedTools "Bash,WebFetch" --dangerously-skip-permissions
 
     # 배열을 개행으로 조인하고 # 제목부터 추출
     $result = ($rawResult -join "`n")

@@ -50,7 +50,7 @@ CRITICAL: Your very first output character must be {. No preamble. No "here is".
     "korean_context": "why Korean enterprise/developer readers must care about this right now"
   }
 }
-"@ --allowedTools "Bash" --dangerouslySkipPermissions
+"@ --allowedTools "Bash" --dangerously-skip-permissions
 
 $result | Out-File -FilePath "$TEMP_PATH\selected.json" -Encoding UTF8
 Write-Host "[Agent 2] Done - editorial brief saved." -ForegroundColor Green
