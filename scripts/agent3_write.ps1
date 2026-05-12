@@ -21,15 +21,16 @@ Write-Host "[Agent 3] Writing posts..." -ForegroundColor Cyan
 function Write-Post {
     param($category, $filePrefix)
 
-    $briefPath = "$TEMP_PATH\brief_$category.json"
-    $selectedObj.$category | ConvertTo-Json -Depth 5 | Out-File -FilePath $briefPath -Encoding UTF8
+    $briefJson = $selectedObj.$category | ConvertTo-Json -Depth 5 -Compress
+    $briefUrl  = $selectedObj.$category.url
 
     $prompt = @"
 You are a senior technical editor at The Core News, a Korean IT publication. Your job is to write structured technical guides for Korean IT practitioners.
 
-Your editorial brief is in the file at path: $briefPath
-Step 1: Read it using Bash (read only, do NOT write any files).
-Step 2: Fetch the original URL from the brief with WebFetch to gather accurate technical details.
+Your editorial brief (JSON):
+$briefJson
+
+Step 1: Fetch the URL above with WebFetch to gather accurate technical details.
 
 WRITING STYLE — follow this exactly, matching the tone of the existing blog:
 - Informative and neutral. Not a newspaper column. Not opinionated narration.
@@ -74,7 +75,7 @@ REQUIRED STRUCTURE (adapt section names to fit the topic naturally):
 OUTPUT: markdown only, starting with # title. No front matter. No code fences around the whole output. No preamble.
 "@
 
-    $rawResult = & "C:\Users\user\.local\bin\claude.exe" -p $prompt --allowedTools "Bash,WebFetch" --dangerously-skip-permissions
+    $rawResult = & "C:\Users\user\.local\bin\claude.exe" -p $prompt --allowedTools "WebFetch"
 
     # 배열을 개행으로 조인하고 # 제목부터 추출
     $result = ($rawResult -join "`n")
