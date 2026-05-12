@@ -3,9 +3,12 @@ $TEMP_PATH = "$BLOG_PATH\scripts\temp"
 $APPROVED_PATH = "$TEMP_PATH\approved"
 $today = (Get-Date).ToString("yyyy-MM-dd")
 $SLACK_WEBHOOK = [Environment]::GetEnvironmentVariable("SLACK_WEBHOOK", "Machine")
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+$OutputEncoding = [System.Text.Encoding]::UTF8
 
 function Send-Slack($message) {
-    $body = [System.Text.Encoding]::UTF8.GetBytes("{`"text`":`"$message`"}")
+    $payload = @{ text = $message } | ConvertTo-Json -Compress
+    $body = [System.Text.Encoding]::UTF8.GetBytes($payload)
     Invoke-RestMethod -Uri $SLACK_WEBHOOK -Method Post -Body $body -ContentType "application/json; charset=utf-8"
 }
 
